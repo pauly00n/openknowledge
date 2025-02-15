@@ -33,21 +33,21 @@ export const SearchInput = () => {
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-3xl mx-auto">
       <div className="relative group">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#6E59A5] to-[#9b87f5] rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
         <div className="relative glass rounded-lg shadow-xl">
           <div className="flex items-center px-4">
-            <Search className="w-5 h-5 text-gray-400" />
+            <Search className="w-5 h-5 text-[#403E43]" />
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Describe your oracle needs..."
-              className="w-full px-4 py-6 bg-transparent border-none focus:outline-none focus:ring-0 text-lg placeholder:text-gray-400"
+              className="w-full px-4 py-6 bg-transparent border-none focus:outline-none focus:ring-0 text-lg font-serif placeholder:text-[#8A898C] text-[#403E43]"
             />
             <button
               type="submit"
               disabled={loading}
-              className="ml-2 px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-md hover:opacity-90 transition-opacity disabled:opacity-50"
+              className="ml-2 px-6 py-2 bg-gradient-to-r from-[#6E59A5] to-[#9b87f5] text-white rounded-md hover:opacity-90 transition-opacity disabled:opacity-50 font-serif"
             >
               {loading ? (
                 <Loader2 className="w-5 h-5 animate-spin" />
