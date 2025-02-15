@@ -5,26 +5,26 @@
 
 @layer base {
   :root {
-    --background: 220 25% 97%;
-    --foreground: 220 25% 20%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 25% 20%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 20%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
     --primary: 262 35% 47%;
     --primary-foreground: 210 20% 98%;
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-    --accent: 262 35% 47%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 262.1 83.3% 57.8%;
-    --radius: 0.5rem;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.75rem;
   }
 }
 
@@ -34,10 +34,10 @@
   }
   body {
     @apply bg-background text-foreground min-h-screen;
-    background: linear-gradient(to bottom right, #fdfcfb 0%, #e2d1c3 100%);
+    background: linear-gradient(to bottom, #1A1F2C 0%, #221F26 100%);
   }
   .glass {
-    @apply backdrop-blur-lg bg-white/20 border border-white/30;
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
   }
 }
 
@@ -52,4 +52,8 @@
   50% {
     transform: translateY(-20px);
   }
+}
+
+.globe {
+  filter: grayscale(100%) brightness(150%) contrast(120%);
 }

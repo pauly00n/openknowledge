@@ -3,7 +3,11 @@ import { useState } from "react";
 import { Search, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-export const SearchInput = () => {
+interface SearchInputProps {
+  onSearch: () => void;
+}
+
+export const SearchInput = ({ onSearch }: SearchInputProps) => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
@@ -27,6 +31,7 @@ export const SearchInput = () => {
         description: "Searching for relevant APIs...",
       });
       setLoading(false);
+      onSearch();
     }, 2000);
   };
 
