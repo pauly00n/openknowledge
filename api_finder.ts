@@ -14,7 +14,7 @@ const PossibleApis = z.object({
   )
 });
 
-async function findPossibleApis(userQuery: string) {
+export async function findPossibleApis(userQuery: string) {
   const completion = await openai.beta.chat.completions.parse({
     model: "gpt-4o-mini",
     messages: [
@@ -33,8 +33,3 @@ async function findPossibleApis(userQuery: string) {
   // completion.choices[0].message.parsed is the validated array
   return completion.choices[0].message.parsed;
 }
-
-(async () => {
-  const apis = await findPossibleApis("Live NBA statistics");
-  console.log(apis);
-})();

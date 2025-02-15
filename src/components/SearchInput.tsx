@@ -4,7 +4,7 @@ import { Search, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface SearchInputProps {
-  onSearch: () => void;
+  onSearch: (query: string) => void;
 }
 
 export const SearchInput = ({ onSearch }: SearchInputProps) => {
@@ -26,12 +26,12 @@ export const SearchInput = ({ onSearch }: SearchInputProps) => {
     setLoading(true);
     // Simulate API call
     setTimeout(() => {
+      onSearch(query);
       toast({
         title: "Query received",
         description: "Searching for relevant APIs...",
       });
       setLoading(false);
-      onSearch();
     }, 2000);
   };
 
