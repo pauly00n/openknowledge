@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import { SearchInput } from "@/components/SearchInput";
-import Globe from "@/components/Globe";
 import confetti from 'canvas-confetti';
 
 type Stage = 'initial' | 'selecting' | 'complete';
@@ -24,18 +23,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12">
-      <Globe stage={stage} />
+      <div className={`w-32 h-32 mb-8 rounded-full bg-gradient-to-r from-[#6E59A5] to-[#9b87f5] 
+        ${stage === 'initial' ? 'animate-bounce' : 
+          stage === 'selecting' ? 'animate-spin' : 'animate-pulse'} 
+        transition-all duration-500 opacity-50 blur-xl`} />
       
       <div className="text-center mb-12 animate-fade-in">
-        <div className="inline-block mb-4 px-4 py-1 rounded-full bg-white/50 backdrop-blur-sm border border-purple-100">
-          <p className="text-sm text-purple-700 font-medium font-serif">
+        <div className="inline-block mb-4 px-4 py-1 rounded-full glass">
+          <p className="text-white/80 text-sm font-medium font-serif">
             Powered by Phala Network & EigenLayer
           </p>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif bg-gradient-to-r from-[#403E43] to-[#6E59A5] bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
           Oracle Deployment Assistant
         </h1>
-        <p className="text-lg text-[#403E43] max-w-2xl mx-auto font-serif">
+        <p className="text-lg text-white/80 max-w-2xl mx-auto font-serif">
           Deploy blockchain oracles effortlessly using natural language. Simply describe
           your needs, and we'll handle the rest.
         </p>
@@ -48,14 +50,13 @@ const Index = () => {
           <div className="max-w-3xl mx-auto glass p-6 rounded-lg">
             <h2 className="text-2xl font-serif mb-4 text-white">Select APIs</h2>
             <div className="space-y-4">
-              {/* Example API options */}
               <div className="p-4 glass rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
                 <h3 className="text-lg font-serif text-white">Price Feed API</h3>
-                <p className="text-sm text-gray-300">Real-time cryptocurrency price data</p>
+                <p className="text-sm text-white/70">Real-time cryptocurrency price data</p>
               </div>
               <div className="p-4 glass rounded-lg cursor-pointer hover:bg-white/10 transition-colors">
                 <h3 className="text-lg font-serif text-white">Weather Data API</h3>
-                <p className="text-sm text-gray-300">Global weather information</p>
+                <p className="text-sm text-white/70">Global weather information</p>
               </div>
               <button
                 onClick={handleComplete}
@@ -72,7 +73,7 @@ const Index = () => {
             <h2 className="text-3xl font-serif text-white mb-4">
               Oracle Deployed Successfully!
             </h2>
-            <p className="text-lg text-gray-300 font-serif">
+            <p className="text-lg text-white/70 font-serif">
               Your oracle is now live on the network
             </p>
           </div>
@@ -80,7 +81,7 @@ const Index = () => {
       </div>
 
       <div className="mt-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-        <p className="text-sm text-[#8E9196] font-serif">
+        <p className="text-sm text-white/60 font-serif">
           Your gateway to decentralized data infrastructure
         </p>
       </div>

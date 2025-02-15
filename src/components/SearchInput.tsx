@@ -41,13 +41,13 @@ export const SearchInput = ({ onSearch }: SearchInputProps) => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#6E59A5] to-[#9b87f5] rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
         <div className="relative glass rounded-lg shadow-xl">
           <div className="flex items-center px-4">
-            <Search className="w-5 h-5 text-[#403E43]" />
+            <Search className="w-5 h-5 text-white/70" />
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Describe your oracle needs..."
-              className="w-full px-4 py-6 bg-transparent border-none focus:outline-none focus:ring-0 text-lg font-serif placeholder:text-[#8A898C] text-[#403E43]"
+              className="w-full px-4 py-6 bg-transparent border-none focus:outline-none focus:ring-0 text-lg font-serif placeholder:text-white/40 text-white"
             />
             <button
               type="submit"
