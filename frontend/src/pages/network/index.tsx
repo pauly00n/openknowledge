@@ -3,6 +3,7 @@ import { SearchInput } from "@/components/SearchInput";
 import confetti from 'canvas-confetti';
 import { getNodeAnswer } from "@/lib/nodes";
 
+import { openAiNodeAnswer } from "@/lib/open_ai_node";
 type Stage = 'initial' | 'selecting' | 'complete';
 
 const Index = () => {
@@ -13,7 +14,7 @@ const Index = () => {
   const handleSearch = async (query: string) => {
     setSavedQuery(query);
     setStage('selecting');
-    const answer = await getNodeAnswer(query);
+    const answer = await openAiNodeAnswer(query);
     setNodeAnswer(answer);
   };
 
