@@ -1,2 +1,0 @@
-# openknowledge
-eigen games
