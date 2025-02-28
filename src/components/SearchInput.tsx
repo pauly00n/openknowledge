@@ -28,8 +28,8 @@ export const SearchInput = ({ onSearch }: SearchInputProps) => {
     setTimeout(() => {
       onSearch(query);
       toast({
-        title: "Query received",
-        description: "Searching for relevant APIs...",
+        title: "Prompt recieved",
+        description: "Our network is searching for the best answer...",
       });
       setLoading(false);
     }, 2000);
@@ -46,7 +46,7 @@ export const SearchInput = ({ onSearch }: SearchInputProps) => {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Describe your oracle needs..."
+              placeholder="Ask anything to our decentralized AI network..."
               className="w-full px-4 py-6 bg-transparent border-none focus:outline-none focus:ring-0 text-lg font-serif placeholder:text-white/40 text-white"
             />
             <button
